@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<body>
+
+     <div th:fragment="sidebar_menu" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+             <img th:src="@{img/crud.jpg}" alt="crud">
+             &nbsp;
+             <span class="fs-6">CRUD APPLICATION</span>
+         </a>
+         <span class="pb-2 mb-2 border-bottom border-white border-2"></span>
+         <ul class="nav nav-pills flex-column mb-auto">
+             <li class="nav-item">
+                 <a th:href="@{/}" class="nav-link text-white active" aria-current="page">
+                     <i class="fa-solid fa-users"></i>
+                     Users
+                 </a>
+             </li>
+             <li>
+                 <a href="#" class="nav-link text-white">
+                     <i class="fa-solid fa-database"></i>
+                     Orders
+                 </a>
+             </li>
+         </ul>
+     </div>
+
+</body>
+</html>
