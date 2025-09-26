@@ -5,6 +5,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class UserService {
@@ -20,5 +21,17 @@ public class UserService {
     public User save(User user){
 
         return userRepository.save(user);
+    }
+
+    public User get(int userId) throws UserNotFoundException{
+
+        try {
+
+            return userRepository.findById(userId).get();
+
+        }catch (NoSuchElementException exception){
+
+            throw new UserNotFoundException("User with the ID: " + userId + " not found!");
+        }
     }
 }

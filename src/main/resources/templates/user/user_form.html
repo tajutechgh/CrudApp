@@ -15,6 +15,7 @@
         </div>
 
         <form th:action="@{/user/save}" method="post"  style="max-width: 800px; margin: 0 auto;" th:object="${user}">
+            <input type="hidden" th:field="*{id}" />
             <div class="border border-secondary rounded p-3 border-3">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label fs-5">First Name:</label>
