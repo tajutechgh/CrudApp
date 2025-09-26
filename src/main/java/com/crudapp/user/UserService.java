@@ -34,4 +34,16 @@ public class UserService {
             throw new UserNotFoundException("User with the ID: " + userId + " not found!");
         }
     }
+
+    public void delete(int userId) throws UserNotFoundException {
+
+        int countId = userRepository.countById(userId);
+
+        if (countId == 0 || userId == 0){
+
+            throw new UserNotFoundException("User with the ID: " + userId + " not found!");
+        }
+
+        userRepository.deleteById(userId);
+    }
 }

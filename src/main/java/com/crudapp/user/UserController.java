@@ -3,10 +3,10 @@ package com.crudapp.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -67,5 +67,22 @@ public class UserController {
 
             return "redirect:/users";
         }
+    }
+
+    @GetMapping("/user/delete/{userId}")
+    public String deleteUser(@PathVariable(name = "userId") int userId, Model model, RedirectAttributes redirectAttributes){
+
+        try {
+
+            userService.delete(userId);
+
+            redirectAttributes.addFlashAttribute("message", "User with the ID: " + userId + " is deleted!");
+
+        }catch (UserNotFoundException exception){
+
+            redirectAttributes.addFlashAttribute("message", exception.getMessage());
+        }
+
+        return "redirect:/users";
     }
 }

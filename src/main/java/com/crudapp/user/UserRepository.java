@@ -6,4 +6,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface UserRepository extends CrudRepository<User, Integer>, PagingAndSortingRepository<User, Integer> {
 
+    public int countById(int id);
 }

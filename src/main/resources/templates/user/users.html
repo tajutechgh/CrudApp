@@ -28,7 +28,7 @@
                         <th>Date of Birth</th>
                         <th>Phone Number</th>
                         <th>Email Address</th>
-                        <th>Action</th>
+                        <th width="10">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +43,7 @@
                         <td>[[${user.emailAddress}]]</td>
                         <td>
                             <a th:href="@{'/user/edit/' + ${user.id}}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <a th:href="@{'/user/delete/' + ${user.id}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 </tbody>
