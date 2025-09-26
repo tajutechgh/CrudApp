@@ -16,4 +16,9 @@ public class UserService {
 
         return (List<User>) userRepository.findAll(Sort.by("id").descending());
     }
+
+    public User save(User user){
+
+        return userRepository.save(user);
+    }
 }

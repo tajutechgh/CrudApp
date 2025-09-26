@@ -1,6 +1,7 @@
 package com.crudapp.user;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -21,6 +22,7 @@ public class User {
     @Column(name = "email_address", nullable = false)
     private String emailAddress;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "dob", nullable = false)
     private Date dateOfBirth;
 
