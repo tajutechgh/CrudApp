@@ -12,6 +12,6 @@ public class DashboardController {
 
         model.addAttribute("pageTitle", "Dashboard");
 
-        return "/dashboard";
+        return "dashboard";
     }
 }

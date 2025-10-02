@@ -24,7 +24,7 @@ public class UserController {
         model.addAttribute("listUsers", listUsers);
         model.addAttribute("pageTitle", "Manage Users");
 
-        return "/user/users";
+        return "user/users";
     }
 
     @GetMapping("/user/create")
@@ -35,7 +35,7 @@ public class UserController {
         model.addAttribute("user", user);
         model.addAttribute("pageTitle", "Add New User");
 
-        return "/user/user_form";
+        return "user/user_form";
     }
 
     @PostMapping("/user/save")
@@ -58,7 +58,7 @@ public class UserController {
             model.addAttribute("user", user);
             model.addAttribute("pageTitle", "Edit User With The ID: " + userId);
 
-            return "/user/user_form";
+            return "user/user_form";
 
         }catch (UserNotFoundException exception){
 
