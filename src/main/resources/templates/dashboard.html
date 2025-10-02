@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="fragments :: page_head(${pageTitle} + ' - Crud App', 'none')" />
+
+<body>
+    <main>
+
+        <div th:replace="navigation :: sidebar_menu"></div>
+
+        <div class="container-fluid">
+            <div class="mt-2 mb-3 border-bottom border-black border-3">
+                <h4>[[${pageTitle}]]</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-bg-success mb-3" style="height: 150px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mt-4"><i class="fa-solid fa-users"></i> Total Users</h5>
+                            <p class="card-text">13098</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-success mb-3" style="height: 150px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mt-4"><i class="fa-solid fa-users"></i> Total Users</h5>
+                            <p class="card-text">13098</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-success mb-3" style="height: 150px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mt-4"><i class="fa-solid fa-users"></i> Total Users</h5>
+                            <p class="card-text">13098</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-bg-success mb-3" style="height: 150px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mt-4"><i class="fa-solid fa-users"></i> Total Users</h5>
+                            <p class="card-text">13098</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+
+        $('#myTable').DataTable();
+
+        $('.toast').each(function () {
+
+              let toast = new bootstrap.Toast(this, { delay: 3000 });
+
+              toast.show();
+        });
+    } );
+</script>
+</body>
+</html>

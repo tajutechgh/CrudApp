@@ -6,3 +6,11 @@
     new bootstrap.Tooltip(tooltipTriggerEl)
   })
 })()
+
+$(document).ready(function () {
+  $(".nav-item a").each(function () {
+    if (this.href === window.location.href) {
+      $(this).addClass("active");
+    }
+  });
+});
