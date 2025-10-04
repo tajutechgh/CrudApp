@@ -157,8 +157,7 @@ After=network.target
 [Service]
 User=ubuntu
 WorkingDirectory=/opt/crudservice
-ExecStart=/usr/bin/java -jar /opt/crudservice/CrudApp-0.0.1-SNAPSHOT.jar --spring.config.location=
-                  /opt/crudservice/application_prod.properties
+ExecStart=/usr/bin/java -jar /opt/crudservice/CrudApp-0.0.1-SNAPSHOT.jar --spring.config.location=/opt/crudservice/application_prod.properties
 SuccessExitStatus=143
 Restart=on-failure
 RestartSec=10
@@ -198,7 +197,7 @@ server {
     server_name your-domain.com;
 
     location / {
-        proxy_pass http://127.0.0.1:8080/crud-app/;
+        proxy_pass http://localhost:8080/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
